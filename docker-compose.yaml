@@ -1,0 +1,22 @@
+version: '3'
+services:
+  nginx:
+    build: ./nginx
+    image: hika-nginx:1.1
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+      - myNetwork
+  apache:
+    build: ./apache
+    image: hika-apache:1.1
+    container_name: apache
+    restart: always
+    networks:
+      - myNetwork
+
+networks:
+  myNetwork:
+    driver: bridge
