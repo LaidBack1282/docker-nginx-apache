@@ -2,7 +2,7 @@ version: '3'
 services:
   nginx:
     build: ./nginx
-    image: hika-nginx:1.1
+    image: hika1282/nginx:${APACHE_TAG}
     container_name: nginx
     restart: always
     ports:
@@ -11,7 +11,7 @@ services:
       - myNetwork
   apache:
     build: ./apache
-    image: hika-apache:1.1
+    image: hika1282/apache:${APACHE_TAG}
     container_name: apache
     restart: always
     networks:
